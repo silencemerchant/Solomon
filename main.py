@@ -3,6 +3,12 @@
 Solomon Main Entry Point
 """
 import asyncio
+import sys
+import os
+
+# Add current directory to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from solomon.core.orchestrator import SolomonOrchestrator
 
 async def main():
@@ -12,13 +18,11 @@ async def main():
     
     orchestrator = SolomonOrchestrator()
     
-    # Example usage
     result = await orchestrator.run_full_sentinel("Havelock North")
     
     print("\n✅ Solomon Sweep Complete")
     print(f"Location: {result.get('location')}")
-    print(f"Bluetooth Devices: {result.get('bluetooth', {}).get('devices_found', 0)}")
-    print(f"Threat Level: {result.get('threat_level', 'NORMAL')}")
+    print(f"Bluetooth Devices Found: {result.get('bluetooth', {}).get('devices_found', 0)}")
 
 if __name__ == "__main__":
-    asyncio.run(main()) 
+    asyncio.run(main())
