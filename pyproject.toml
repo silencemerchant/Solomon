@@ -2,7 +2,12 @@
 name = "solomon"
 version = "0.1.0"
 description = "Solomon Autonomous Intelligence Platform"
+authors = [{name = "Lowkey Consultants"}]
 requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["solomon*"]
 
 [project.scripts]
 solomon = "solomon.main:main"
