@@ -1,0 +1,8 @@
+[project]
+name = "solomon"
+version = "0.1.0"
+description = "Solomon Autonomous Intelligence Platform"
+requires-python = ">=3.10"
+
+[project.scripts]
+solomon = "solomon.main:main"
