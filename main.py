@@ -21,4 +21,4 @@ async def main():
     print(f"Threat Level: {result.get('threat_level', 'NORMAL')}")
 
 if __name__ == "__main__":
-    asyncio.run(main()) 10 
+    asyncio.run(main()) 
