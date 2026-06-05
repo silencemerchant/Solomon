@@ -1,0 +1,8 @@
+reports/
+__pycache__/
+*.pyc
+.env
+*.log
+dinosaurs/raw/
+*.apk
+*.aab
