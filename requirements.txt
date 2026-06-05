@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langgraph
+neo4j
+requests
+beautifulsoup4
+bleak
+python-dotenv
