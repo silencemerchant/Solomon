@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    restart: always
+    ports:
+      - "7474:7474"    # Browser interface
+      - "7687:7687"    # Bolt protocol
+    environment:
+      - NEO4J_AUTH=neo4j/solomon2026
+      - NEO4J_dbms_security_auth__minimum__password__length=8
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+
+  solomon:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - NZBN_API_KEY=${NZBN_API_KEY}
+    depends_on:
+      - neo4j
+    volumes:
+      - ./reports:/app/reports
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
